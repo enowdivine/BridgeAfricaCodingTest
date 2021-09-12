@@ -185,10 +185,10 @@ export default {
         this.dialog = false;
       }
     },
-    editProduct(index) {
-      this.EDIT_PRODUCT(index);
-      this.editedItem = Object.assign({}, index);
-      this.dialog = true;
+    editProduct() {
+      this.EDIT_PRODUCT(this.editedProduct);
+      this.editedItem = "";
+      this.dialog = false;
     },
     delProduct(product) {
       this.deleteProduct(product);

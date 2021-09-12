@@ -2,7 +2,7 @@
   <div>
     <Products />
     <div class="logout">
-      <v-btn color="red" @click="doLogout" size="lg">Logout</v-btn>
+      <v-btn color="red" dark @click="doLogout" size="lg">Logout</v-btn>
     </div>
   </div>
 </template>

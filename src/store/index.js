@@ -7,28 +7,32 @@ export default new Vuex.Store({
   state: {
     products: [
       {
-        name: "Hamburger",
-        description: "description",
+        name: "Cell Phone",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta doloribus facilis, unde reiciendis mollitia quidem.",
         price: 5000,
+        condition: "good",
+      },
+      {
+        name: "Television",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta doloribus facilis, unde reiciendis mollitia quidem.",
+        price: 18000,
         condition: "Very good",
       },
       {
-        name: "pizza",
-        description: "description",
-        price: 10000,
-        condition: "Very good",
+        name: "Fridge",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta doloribus facilis, unde reiciendis mollitia quidem.",
+        price: 12000,
+        condition: "Bad",
       },
       {
-        name: "pizza",
-        description: "description",
-        price: 10000,
-        condition: "Very good",
-      },
-      {
-        name: "pizza",
-        description: "description",
-        price: 10000,
-        condition: "Very good",
+        name: "Computer",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta doloribus facilis, unde reiciendis mollitia quidem.",
+        price: 1000,
+        condition: "Excellent",
       },
     ],
 
@@ -54,7 +58,8 @@ export default new Vuex.Store({
       state.products.push(product);
     },
     EDIT_PRODUCT: (state, product) => {
-      Object.assign(product);
+      const index = state.products.findIndex((item) => item.id === product.id);
+      Vue.set(state.products, index, product);
     },
     DELETE_PRODUCT: (state, product) => {
       state.products.splice(product, 1);
